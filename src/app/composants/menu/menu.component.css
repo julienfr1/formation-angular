@@ -1,3 +1,11 @@
 ul {
      list-style-type: none;    /*pour supprimer les point devant la liste */
 }
+.active {
+    font-weight: bold;
+   
+}
+
+.active>*:visited{
+    color: green;
+}

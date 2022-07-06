@@ -8,6 +8,9 @@ import { AdresseComponent } from './composants/adresse/adresse.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { NotFoundComponent } from './composants/not-found/not-found.component';
 import { HomeComponent } from './composants/home/home.component';
+import { HeaderComponent } from './composants/header/header.component';
+import { TableauComponent } from './composants/tableau/tableau.component';
+import { CalculComponent } from './composants/calcul/calcul.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HomeComponent } from './composants/home/home.component';
     AdresseComponent,
     StagiaireComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    TableauComponent,
+    CalculComponent
   ],
   imports: [
     BrowserModule,

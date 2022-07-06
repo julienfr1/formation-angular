@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-adresse',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdresseComponent implements OnInit {
 
-  constructor() { }
+  rue = "";
+  ville = "";
+  codePostal = "";
+  constructor(private  route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParamMap.subscribe ((res) => {  // on peut ne  pas mettre (next) il le choisi par defaut
+      this.ville = res.get('ville')  ?? "";
+      this.rue = res.get('rue')  ?? "";
+      this.codePostal = res.get('codePostal')  ?? "";
+    })
   }
 
 }

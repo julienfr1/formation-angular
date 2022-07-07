@@ -116,3 +116,71 @@
     </ng-template>
   </ng-container>
 </ul>
+
+
+<h3>Liens avec paramètres</h3>
+
+<p>
+     <a routerLink="/stagiaire/washington/denzel">Visiter la page de D. W.</a>  <!--(statique) il cherche les proproietes ecrit en dure -->
+</p>
+<p>
+    <a [routerLink]="['/stagiaire', nom, prenom]">Visiter la page de D. W.</a>   <!--( lien dinamyque)il cherche les prprites(nom et prenom)ecrit dans home.com..ts-->
+</p>
+
+<!-- pour les parametres apres ?  on ne met pas [] pour routerLink mais on ajoute [queryParams]  -->
+<p>
+  <a routerLink="/adresse" [queryParams]="{rue: streetName, ville: city, codePostal: zipCode}">   <!--{} parametres qui va chercher dans la class-->
+      Visitez les alpes maritimes
+  </a>
+</p>
+
+<h3>Redirection</h3>
+
+<button (click)="visiter()">
+    Rendre visite à Mitroglou
+</button>
+
+<!-- pour verifier frontawesome -->
+<h3>Icônes</h3>
+<span style="color: Tomato;">
+    <i class="fab fa-angular fa-7x"></i>
+</span>
+<i class="fab fa-angular fa-3x fa-rotate-90"></i>
+<i class="fas fa-camera"></i>
+<i class="fa fa-home fa-5x"></i>
+<i class="fa fa-home fa-5x fa-flip-horizontal" style="color: green;"></i>
+<span style="color: skyblue;" class="fa-3x">
+    <i class="fas fa-stroopwafel fa-spin"></i>
+</span>
+
+<h3>Pipes</h3>
+<p>{{ title | uppercase }}</p>       <!--//lettre en majuscule -->
+<p>{{ title | titlecase }}</p>     <!--//premiere lettre en majuscule -->
+<p>{{ maDate | date:"d MMM y" }}</p>
+<p>{{ maDate | date:"d MM y" }}</p>
+<p>{{ maDate | date:"d MMM y" | uppercase }}</p>
+<p>{{ stagiaire | json }}</p> 
+
+<!--<ul>
+  <li *ngFor="let elt of stagiaire | keyvalue">    // (| keyvalue) pour pouvoir utilser *ngFoer(une boucle) sur un objet(ici stagiaire), les boucles c'est pour les tableaux
+      {{ elt.key }} {{ elt.value}}                 // il faut enlever (?) dans interface>stagiaire>.ts parceque Pipe ne fonctionne pas si valeur null 
+  </li>
+</ul> -->
+
+<h3>Pipe : getchar</h3>
+
+<p>{{ title | getchar}}</p>
+<p>{{ "bonjour" | getchar }}</p>
+<p>{{ "bonjour" | getchar:2 }}</p>
+
+<h3>Pipe : evenvalue</h3>
+<ul>
+    <li *ngFor="let elt of tab | evenvalue"> 
+        {{ elt }}
+    </li>
+</ul>
+
+<h3>Pipe : substr</h3>
+<p>{{ "bonjour" | substr }}</p>
+<p>{{ "bonjour" | substr:3 }}</p>
+<p>{{ "bonjour" | substr:3:5 }}</p>

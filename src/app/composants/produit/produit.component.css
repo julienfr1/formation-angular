@@ -1,0 +1,6 @@
+ .ng-invalid:not(form) {                               /* not(form)il applique sur tout ceux qui sont de la classe ng-invalid mais pas seux de la balise form)  */
+    border-left: 5px red solid;
+}
+.ng-valid:not(form) {
+    border-left: 5px green solid;
+}

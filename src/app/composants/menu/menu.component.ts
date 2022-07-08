@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Utilisateur } from 'src/app/interfaces/utilisateur';
+import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,10 +8,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  utilisateur: Utilisateur = {};
+  isConnected = false;
+  constructor(private us: UtilisateurService) { }
 
-  constructor() { }
+  ngOnInit(): void {  
+    
+  }
+  seConnecter() {
+    this.us.checkUser(this.utilisateur).subscribe(res => {
+      if (res.length > 0) {
+        this.isConnected = true;
 
-  ngOnInit(): void {
+        const userString = JSON.stringify(res[0]);  //converstion de l'objet en string   //partie web storage   
+        this.utilisateur = res[0];
+        localStorage.setItem('user', userString)    
+
+      }     
+    }) 
+  }
+  seDeconnecter() {
+    this.isConnected = false;
+
+    localStorage.removeItem('user');   //quand il se deconnecte, il spprime les données stockés dans le navigateur //partie web storage  
+  
+    
+  
   }
 
+
 }
+
+

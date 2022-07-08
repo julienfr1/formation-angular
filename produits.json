@@ -1,0 +1,24 @@
+{
+  "produits": [
+    {
+      "id": 1,
+      "designation": "écran",
+      "prixUnitaire": 100,
+      "quantiteEnStock": 10,
+      "chemin": ""
+    },
+    {
+      "id": 2,
+      "designation": "souris",
+      "prixUnitaire": 10,
+      "quantiteEnStock": 25,
+      "chemin": ""
+    },
+    {
+      "designation": "clavier",
+      "prixUnitaire": 20,
+      "quantiteEnStock": 90,
+      "id": 3
+    }
+  ]
+}

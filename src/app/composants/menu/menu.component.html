@@ -4,7 +4,7 @@
     <li><a href="/stagiaire">Stagiaire</a></li>
 </ul> -->
 <!-- on a remplacé href par routerLink dans angular pour que la navigateur n'actualise pas toute la page -->
-<ul>
+<!-- <ul>
     <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a routerLink="">Accueil</a>
     </li>
@@ -20,4 +20,28 @@
     <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a routerLink="/produit">Produit</a>
     </li>
-</ul>
+</ul> -->
+
+
+<!-- changement de style  -->
+<nav class="navbar navbar-expand-sm bg-light navbar-info">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="">Accueil</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/adresse">Adresse</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/stagiaire">Stagiaire</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/formulaire">Formulaire</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/produit">Produit</a>
+            </li>
+        </ul>
+    </div>
+</nav>
